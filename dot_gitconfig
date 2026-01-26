@@ -1,0 +1,45 @@
+[user]
+    name = Laurent De Marez
+    email = laurent@demarez.org
+    useconfigonly = true
+
+[commit]
+  # https://help.github.com/articles/signing-commits-using-gpg/
+  gpgsign = false
+
+[core]
+    excludesfile = ~/.gitignore
+
+[alias]
+    co = checkout
+    ll = log --graph --pretty=format':%C(yellow)%h%C(cyan)%d%C(reset) %s %C(white) %C(red bold)%an%C(reset), %C(green)%ar%C(reset)'
+    l = !git --no-pager ll -8
+    s = status -s
+    ss = show --summary
+
+[color]
+    ui = auto
+
+[color "status"]
+    added = yellow bold
+    changed = green bold
+    untracked = red bold
+
+[push]
+    default = simple
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+
+[pull]
+    rebase = true
+
+[gitreview]
+    remote = origin
+
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
