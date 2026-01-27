@@ -14,7 +14,7 @@ return {
       workspaces = {
         {
           name = 'lrnt',
-          path = '~/Library/Mobile Documents/iCloud~md~obsidian/Documents/lrnt',
+          path = '~/Code/lrnt/vault',
         },
       },
       daily_notes = {
