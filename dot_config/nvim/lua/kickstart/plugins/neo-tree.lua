@@ -15,6 +15,12 @@ return {
   },
   opts = {
     filesystem = {
+      filtered_items = {
+        hide_dotfiles = false,
+        always_show = {
+          "vault",
+        },
+      },
       window = {
         mappings = {
           ['\\'] = 'close_window',
