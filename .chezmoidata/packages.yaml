@@ -11,6 +11,7 @@ packages:
       - nvm
       - ripgrep
       - fzf
+      - uv
     casks:
       - ghostty
       - monitorcontrol
