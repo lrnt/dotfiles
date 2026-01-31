@@ -19,7 +19,8 @@ if which -s "brew"; then
   echo " Homebrew is already installed."
 else
   echo " Installing Homebrew"
-  yes "" | INTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
   echo " Homebrew installed successfully."
 fi
 
