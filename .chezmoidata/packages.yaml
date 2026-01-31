@@ -1,0 +1,17 @@
+packages:
+  darwin:
+    brews:
+      - git
+      - opencode
+      - watchexec
+      - watchman
+      - prettier
+      - neovim
+      - pandoc
+      - nvm
+      - ripgrep
+      - fzf
+    casks:
+      - ghostty
+      - monitorcontrol
+      - font-jetbrains-mono-nerd-font
