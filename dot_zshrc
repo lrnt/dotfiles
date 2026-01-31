@@ -6,6 +6,13 @@ plugins=(git nvm brew)
 
 source $ZSH/oh-my-zsh.sh
 
+# Prompt
+NEWLINE=$'\n'
+PROMPT="${NEWLINE}"
+PROMPT+="%{$fg[red]%}%n%{$reset_color%} @ $fg[yellow]%}%m%{$reset_color%} in $fg[cyan]%}%~%{$reset_color%} "
+PROMPT+='$(git_prompt_info)'
+PROMPT+="${NEWLINE}%(?:%{$fg_bold[green]%}%1{➜%} :%{$fg_bold[red]%}%1{➜%} )%{$reset_color%}"
+
 # Aliases
 alias ls="ls -F --color=always"
 alias ll="ls -la"
