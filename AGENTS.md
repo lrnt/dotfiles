@@ -1,0 +1,72 @@
+# Agents
+
+This document provides context and instructions for AI coding agents working
+with this repository.
+
+## Overview
+
+- Personal dotfiles repo for macOS, managed with chezmoi.
+- Edits here apply to the home directory via `chezmoi apply`.
+
+## Repository structure
+
+```
+.
+├── .chezmoidata/
+├── .chezmoiignore
+├── dot_config/
+├── dot_gitconfig
+├── dot_zprofile
+├── dot_zshenv
+├── dot_zshrc
+├── run_onchange_darwin-install-packages.sh.tmpl
+├── setup.sh
+└── Makefile
+```
+
+## Chezmoi conventions
+
+- `dot_*` files map to `~/.<name>` (example: `dot_zshrc` -> `~/.zshrc`).
+- `dot_config/...` maps to `~/.config/...`.
+- `.tmpl` files use chezmoi Go templates; keep `{{ ... }}` syntax intact.
+- `run_onchange_*` scripts run during `chezmoi apply` when their sources change.
+
+## Key files
+
+- `.chezmoidata/packages.yaml` lists Homebrew packages.
+- `run_onchange_darwin-install-packages.sh.tmpl` renders a Brewfile and runs
+  `brew bundle`.
+- `setup.sh` bootstraps the macOS environment.
+- `.chezmoiignore` defines files ignored by chezmoi.
+
+## Guidelines
+
+### Making Changes
+
+1. **Template Files**: When editing `.tmpl` files, preserve Go template syntax
+   (e.g., `{{ .chezmoi.* }}`)
+2. **Shell Scripts**: Follow existing shell script conventions (zsh compatible)
+3. **Testing**: Use `chezmoi diff` to preview changes before applying
+4. **Validation**: Run `chezmoi apply --dry-run` to test changes
+
+### Best Practices
+
+- **Preserve existing structure**: Don't reorganize files without explicit
+  request
+- **Maintain compatibility**: Changes should work on macOS and unix systems
+- **Template variables**: Use chezmoi template variables when appropriate
+- **Idempotency**: Scripts should be safe to run multiple times
+- **Error handling**: Fail gracefully when writing scripts
+- **Comments**: Never add comments
+
+## Generated files
+
+- `dot_config/nvim/lazy-lock.json` and `dot_config/nvim/doc/tags` are generated
+  by Neovim; avoid hand-editing unless you are intentionally updating them via
+  Neovim/Lazy.
+
+## Workflow
+
+- Use `chezmoi diff` to review changes.
+- Prefer `chezmoi apply --dry-run` to validate before applying.
+- Keep scripts idempotent and safe to re-run.
