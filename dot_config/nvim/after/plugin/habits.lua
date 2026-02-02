@@ -1,5 +1,5 @@
 local function open_habits(opts)
-  local script = vim.fn.expand '~/Code/lrnt/habits/main.py'
+  local script = vim.fn.expand '~/Code/lrnt/kb/habits/main.py'
   local vault = vim.fn.expand '~/Code/lrnt/vault/dailies'
   local args = opts and opts.fargs or {}
   local parts = { vim.fn.shellescape(script), '--vault', vim.fn.shellescape(vault) }
