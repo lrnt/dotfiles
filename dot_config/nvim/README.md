@@ -60,10 +60,6 @@ fork to your machine using one of the commands below, depending on your OS.
 > Your fork's URL will be something like this:
 > `https://github.com/<your_github_username>/kickstart.nvim.git`
 
-You likely want to remove `lazy-lock.json` from your fork's `.gitignore` file
-too - it's ignored in the kickstart repo to make maintenance easier, but it's
-[recommended to track it in version control](https://lazy.folke.io/usage/lockfile).
-
 #### Clone kickstart.nvim
 
 > [!NOTE]
@@ -237,4 +233,3 @@ sudo dnf install -y gcc make git ripgrep fd-find unzip neovim
 sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 </details>
-

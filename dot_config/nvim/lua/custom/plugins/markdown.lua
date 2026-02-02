@@ -1,22 +1,17 @@
 return {
   {
-    'OXY2DEV/markview.nvim',
-    lazy = false,
-    config = function()
-      require('markview').setup({
-        preview = {
-          enable = true,
-          enable_hybrid_mode = true,
-          modes = { 'n' },
-          hybrid_modes = { 'n' },
-        },
-        markdown = {
-          block_quotes = { wrap = true },
-          headings = { org_indent_wrap = true },
-          list_items = { wrap = true },
-        },
-      })
-    end,
+    'MeanderingProgrammer/render-markdown.nvim',
+    ft = 'markdown',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
+    opts = {
+      preset = 'obsidian',
+      anti_conceal = {
+        enabled = false,
+      },
+    },
   },
   {
     'gaoDean/autolist.nvim',
