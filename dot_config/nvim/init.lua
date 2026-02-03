@@ -736,6 +736,22 @@ require('lazy').setup({
           end,
         },
       }
+
+      local lspconfig = require('lspconfig')
+      local configs = require('lspconfig.configs')
+      if not configs.cooklang then
+        configs.cooklang = {
+          default_config = {
+            cmd = { 'cook', 'lsp' },
+            filetypes = { 'cook', 'cooklang' },
+            root_dir = function(fname)
+              return lspconfig.util.root_pattern('.git', 'config')(fname) or lspconfig.util.path.dirname(fname)
+            end,
+            settings = {},
+          },
+        }
+      end
+      lspconfig.cooklang.setup { capabilities = capabilities }
     end,
   },
 
