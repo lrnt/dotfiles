@@ -779,6 +779,7 @@ require('lazy').setup({
         javascriptreact = { { 'prettier' } },
         typescriptreact = { 'prettier' },
         markdown = { 'prettier_markdown' },
+        cook = { 'prettier_cook' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -791,6 +792,22 @@ require('lazy').setup({
           args = {
             "--stdin-filepath",
             "$FILENAME",
+            "--prose-wrap",
+            "always",
+            "--print-width",
+            "80",
+            "--tab-width",
+            "2",
+          },
+          stdin = true,
+        },
+        prettier_cook = {
+          command = "prettier",
+          args = {
+            "--stdin-filepath",
+            "$FILENAME",
+            "--parser",
+            "markdown",
             "--prose-wrap",
             "always",
             "--print-width",
