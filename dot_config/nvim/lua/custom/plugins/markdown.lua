@@ -9,9 +9,6 @@ return {
     opts = {
       preset = 'obsidian',
       render_modes = { 'n' },
-      anti_conceal = {
-        enabled = false,
-      },
     },
   },
   {
