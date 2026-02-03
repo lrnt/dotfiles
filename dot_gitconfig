@@ -12,6 +12,8 @@
 
 [alias]
     co = checkout
+    d = diff
+    ds = diff --staged
     ll = log --graph --pretty=format':%C(yellow)%h%C(cyan)%d%C(reset) %s %C(white) %C(red bold)%an%C(reset), %C(green)%ar%C(reset)'
     l = !git --no-pager ll -8
     s = status -s
