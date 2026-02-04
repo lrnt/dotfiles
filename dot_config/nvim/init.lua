@@ -776,10 +776,11 @@ require('lazy').setup({
         javascript = { 'prettier' },
         typescript = { 'prettier' },
         svelte = { 'prettier' },
-        javascriptreact = { { 'prettier' } },
+        javascriptreact = { 'prettier' },
         typescriptreact = { 'prettier' },
         markdown = { 'prettier_markdown' },
         cook = { 'prettier_cook' },
+        htmldjango = { 'djlint' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -816,6 +817,18 @@ require('lazy').setup({
             "2",
           },
           stdin = true,
+        },
+        djlint = {
+          command = "djlint",
+          args = {
+            "--profile",
+            "jinja",
+            "--reformat",
+            "--quiet",
+            "$FILENAME",
+          },
+          exit_codes = { 0, 1 },
+          stdin = false,
         },
       },
     },

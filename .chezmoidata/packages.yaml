@@ -6,9 +6,11 @@ packages:
       - watchexec
       - watchman
       - prettier
+      - djlint
       - neovim
       - cookcli
       - pandoc
+      - prettier
       - nvm
       - ripgrep
       - fzf
