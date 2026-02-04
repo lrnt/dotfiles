@@ -19,6 +19,38 @@ alias ll="ls -la"
 alias grep="grep --color=always"
 alias reload="source ~/.zshenv && source ~/.zshrc"
 
+function gwa() {
+    [[ -z "$1" ]] && echo "Usage: gwa [branch name]" && return 1
+
+    local branch="$1"
+    local base="$(basename "$PWD")"
+    local path="../${base}--${branch}"
+
+    git worktree add -b "$branch" "$path"
+    mise trust "$path"
+    cd "$path"
+}
+
+function gwd() {
+    local reply
+    read -r "?Remove worktree and branch? [y/N] " reply
+    [[ "$reply" == [yY]* ]] || return 0
+
+    local cwd worktree root branch
+
+    cwd="$(pwd)"
+    worktree="$(basename "$cwd")"
+
+    root="${worktree%%--*}"
+    branch="${worktree#*--}"
+
+    [[ "$root" == "$worktree" ]] && return 1
+
+    cd "../$root"
+    git worktree remove "$worktree" --force
+    git branch -D "$branch"
+}
+
 function to() {
     # no args. do nothing and quit silently
     [[ $# -lt 1 ]] && return 1
