@@ -28,6 +28,17 @@ return {
         date_format = '%Y-%m-%d',
         time_format = '%H:%M',
       },
+      note_id_func = function(title)
+        if title and title ~= '' then
+          return title
+        end
+        return tostring(os.time())
+      end,
+      note_path_func = function(spec)
+        local name = spec.title and spec.title ~= '' and spec.title or spec.id
+        local path = spec.dir / tostring(name)
+        return path:with_suffix('.md')
+      end,
       completion = {
         blink = true,
         nvim_cmp = false,
