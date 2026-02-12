@@ -15,6 +15,7 @@ packages:
       - ripgrep
       - fzf
       - uv
+      - xclip
     casks:
       - ghostty
       - monitorcontrol
