@@ -411,10 +411,13 @@ require('lazy').setup({
             '--smart-case',
             '--follow',
           },
+          file_ignore_patterns = { '%.git/' },
         },
         pickers = {
           find_files = {
-            follow = true, -- Follow symlinks
+            follow = true,      -- Follow symlinks
+            hidden = true,      -- Show dotfiles
+            no_ignore = false,  -- Respect ignore files
           },
         },
         extensions = {
