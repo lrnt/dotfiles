@@ -12,10 +12,14 @@ packages:
       - pandoc
       - prettier
       - nvm
+      - node
       - ripgrep
       - fzf
+      - tmux
       - uv
       - xclip
+    npm:
+      - "@earendil-works/pi-coding-agent"
     casks:
       - ghostty
       - monitorcontrol

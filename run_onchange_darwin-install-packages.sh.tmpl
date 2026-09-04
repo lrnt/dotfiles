@@ -15,4 +15,8 @@ brew {{ . | quote }}
 cask {{ . | quote }}
 {{ end -}}
 EOF
+
+{{ range .packages.darwin.npm -}}
+npm install --global --ignore-scripts --min-release-age=0 --prefix "$HOME/.local" {{ . | quote }}
+{{ end -}}
 {{ end -}}
