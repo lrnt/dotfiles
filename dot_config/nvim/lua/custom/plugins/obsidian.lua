@@ -39,10 +39,6 @@ return {
         local path = spec.dir / tostring(name)
         return path:with_suffix('.md')
       end,
-      completion = {
-        blink = true,
-        nvim_cmp = false,
-      },
       picker = {
         name = 'telescope.nvim',
       },
