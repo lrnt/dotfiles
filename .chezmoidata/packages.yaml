@@ -9,6 +9,7 @@ packages:
       - watchman
       - prettier
       - djlint
+      - imagemagick
       - neovim
       - cookcli
       - tree-sitter-cli
