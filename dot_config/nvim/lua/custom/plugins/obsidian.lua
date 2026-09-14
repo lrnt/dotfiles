@@ -44,7 +44,7 @@ return {
         nvim_cmp = false,
       },
       picker = {
-        name = 'telescope',
+        name = 'telescope.nvim',
       },
       ui = {
         enable = false,

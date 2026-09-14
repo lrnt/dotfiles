@@ -9,6 +9,7 @@ packages:
       - djlint
       - neovim
       - cookcli
+      - tree-sitter-cli
       - pandoc
       - prettier
       - nvm
