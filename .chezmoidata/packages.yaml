@@ -1,6 +1,8 @@
 packages:
   darwin:
     brews:
+      - daytonaio/cli/daytona
+      - infisical/get-cli/infisical
       - git
       - opencode
       - watchexec
