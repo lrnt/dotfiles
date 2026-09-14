@@ -21,6 +21,7 @@ packages:
       - xclip
     npm:
       - "@earendil-works/pi-coding-agent"
+      - mint
     casks:
       - ghostty
       - monitorcontrol
