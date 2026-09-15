@@ -1,11 +1,14 @@
 [user]
     name = Laurent De Marez
     email = laurent@demarez.org
+    signingkey = /Users/laurent/.ssh/id_rsa.pub
     useconfigonly = true
 
+[gpg]
+    format = ssh
+
 [commit]
-  # https://help.github.com/articles/signing-commits-using-gpg/
-  gpgsign = false
+    gpgsign = true
 
 [core]
     excludesfile = ~/.gitignore
