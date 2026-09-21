@@ -4,7 +4,7 @@ packages:
       - daytonaio/cli/daytona
       - infisical/get-cli/infisical
       - git
-      - opencode
+      - anomalyco/tap/opencode-v2
       - watchexec
       - watchman
       - prettier
