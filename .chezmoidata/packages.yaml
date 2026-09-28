@@ -1,5 +1,8 @@
 packages:
   darwin:
+    trusted_taps:
+      - daytonaio/cli
+      - infisical/get-cli
     brews:
       - daytonaio/cli/daytona
       - infisical/get-cli/infisical
