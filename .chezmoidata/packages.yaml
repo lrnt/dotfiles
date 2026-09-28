@@ -1,6 +1,7 @@
 packages:
   darwin:
     trusted_taps:
+      - anomalyco/tap
       - daytonaio/cli
       - infisical/get-cli
     brews:
