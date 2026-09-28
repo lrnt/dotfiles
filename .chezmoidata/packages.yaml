@@ -5,6 +5,7 @@ packages:
       - infisical/get-cli/infisical
       - git
       - anomalyco/tap/opencode-v2
+      - herdr
       - watchexec
       - watchman
       - prettier
