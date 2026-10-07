@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+
+if ! command -v npm >/dev/null 2>&1; then
+  echo "npm is required to install Pi skill dependencies." >&2
+  exit 1
+fi
+
+printf 'Installing Pi skill dependencies (%s)\n' '{{ include "dot_pi/agent/skills/web-browser/scripts/package-lock.json" | sha256sum }}'
+npm ci --ignore-scripts --no-audit --no-fund --prefix "$HOME/.pi/agent/skills/web-browser/scripts"
